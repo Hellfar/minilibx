@@ -1,9 +1,9 @@
 /*
-** mlx_int.h for mlx in 
-** 
+** mlx_int.h for mlx in
+**
 ** Made by Charlie Root
 ** Login   <ol@epitech.net>
-** 
+**
 ** Started on  Mon Jul 31 16:45:48 2000 Charlie Root
 ** Last update Wed May 25 16:44:16 2011 Olivier Crouzet
 */
@@ -28,6 +28,11 @@
 #include	<X11/extensions/XShm.h>
 /* #include	<X11/xpm.h> */
 
+/* As for linux systems that don't have strlcpy and strlcat. */
+#ifdef __linux__
+# define strlcpy strncpy
+# define strlcat strncat
+#endif
 
 #define	MLX_TYPE_SHM_PIXMAP	3
 #define	MLX_TYPE_SHM		2
